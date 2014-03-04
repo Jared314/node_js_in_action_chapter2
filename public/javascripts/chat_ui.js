@@ -39,7 +39,13 @@ var socketListeners = {
   },
   message: function(message) {
     console.log("message rcv: ", message);
-    var newElement = $("<div></div>").text(message.text);
+
+    var formatted_message = message.text;
+    if (message.name) {
+      formatted_message = message.name + " # " + message.text;
+    }
+
+    var newElement = $("<div></div>").text(formatted_message);
     $("#messages").append(newElement);
   },
   joinResult: function(result) {
