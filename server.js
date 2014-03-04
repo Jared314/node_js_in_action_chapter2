@@ -19,7 +19,7 @@ var server = http.createServer(function(request, response) {
 
 server.listen(3001, function() {
   console.log("Server listening on port 3001.");
-})
+});
 
 function send404(response) {
   response.writeHead(404, { "Content-Type": "text/plain" });

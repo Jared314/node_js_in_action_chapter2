@@ -20,10 +20,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="chat_ui.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="chat_ui.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/chat_ui.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="38" selection-start="591" selection-end="591" vertical-scroll-proportion="0.6359338">
+            <state line="40" column="28" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="0" selection-start="1290" selection-end="1290" vertical-scroll-proportion="0.21985815">
               <folding />
             </state>
           </provider>
@@ -55,6 +64,7 @@
         <option value="$PROJECT_DIR$/lib/chat_server.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/javascripts/chat_ui.js" />
+        <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
   </component>
@@ -264,7 +274,9 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/lib/chat_server.js">
@@ -339,7 +351,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/chat_ui.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="38" selection-start="591" selection-end="591" vertical-scroll-proportion="0.6359338">
+        <state line="40" column="28" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="1290" selection-end="1290" vertical-scroll-proportion="0.21985815">
           <folding />
         </state>
       </provider>
