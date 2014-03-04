@@ -25,9 +25,8 @@ function processUserInput(chatApp, socket) {
 
 var socket = io.connect();
 
-$(document).ready(function() {
-  var chatApp = new Chat(socket);
-  socket.on("namesResult", function(result) {
+var socketListeners = {
+  nameResult: function(result) {
     var message;
     if (result.success) {
       message = "You are now known as " + result.name + ".";
@@ -35,19 +34,16 @@ $(document).ready(function() {
       message = result.message;
     }
     $("#messages").append(divSystemContentElement(message));
-  });
-
-  socket.on("joinResult", function(result) {
-    $("#room").text(result.room);
-    $("#messages").append(divSystemContentElement("Room changed."));
-  });
-
-  socket.on("message", function(message) {
+  },
+  message: function(message) {
     var newElement = $("<div></div>").text(message.text);
     $("#messages").append(newElement);
-  });
-
-  socket.on("rooms", function(rooms) {
+  },
+  joinResult: function(result) {
+    $("#room").text(result.room);
+    $("#messages").append(divSystemContentElement("Room changed."));
+  },
+  rooms: function(rooms) {
     $("#room-list").empty();
     for(var room in rooms) {
       room = room.substring(1, room.length);
@@ -60,7 +56,16 @@ $(document).ready(function() {
       chatApp.processCommand("/join " + $(this).text());
       $("#send-message").focus();
     });
-  });
+  }
+};
+
+
+$(document).ready(function() {
+  var chatApp = new Chat(socket);
+
+  for(evt in socketListeners) {
+    socket.on(evt, socketListeners[evt]);
+  }
 
   setInterval(function() {
     socket.emit("rooms");
