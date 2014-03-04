@@ -6,5 +6,8 @@
   "dependencies": {
     "socket.io": "~0.9.6",
     "mime": "~1.2.7"
+  },
+  "devDependencies": {
+    "node-dev": "~2.1.6"
   }
 }
