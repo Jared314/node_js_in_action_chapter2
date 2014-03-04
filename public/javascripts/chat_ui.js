@@ -17,7 +17,8 @@ function processUserInput(chatApp, socket) {
     }
   } else {
     chatApp.sendMessage($("#room").text(), message);
-    $("#messages").append(divEscapedContentElement(message));
+    var name = $("#chat-name").text();
+    $("#messages").append(divEscapedContentElement(name + " : " + message));
     $("#messages").scrollTop($("#messages").prop("scrollHeight"));
   }
   $("#send-message").val("");
@@ -33,6 +34,7 @@ var socketListeners = {
     } else {
       message = result.message;
     }
+    $("#chat-name").text(result.name);
     $("#messages").append(divSystemContentElement(message));
   },
   message: function(message) {
