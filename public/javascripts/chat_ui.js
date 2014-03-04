@@ -38,6 +38,7 @@ var socketListeners = {
     $("#messages").append(divSystemContentElement(message));
   },
   message: function(message) {
+    console.log("message rcv: ", message);
     var newElement = $("<div></div>").text(message.text);
     $("#messages").append(newElement);
   },
